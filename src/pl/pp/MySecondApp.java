@@ -5,16 +5,32 @@ public class MySecondApp {
 
     public static void main(String[] args){
 
+        double x = 10;
+        double y = 2;
+
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please enter your name:");
-        String forename = scanner.nextLine();
+        var result = x + y;
+        System.out.println("x + y = " + result);
 
-        System.out.println("Please enter your surname:");
-        String surname = scanner.nextLine();
+        result = x - y;
+        System.out.println("x - y = " + result);
+
+        result = x * y;
+        System.out.println("x * y = " + result);
+
+        result = x / y;
+        System.out.println("x / y = " + result);
+
+        result = x % y;
+        System.out.println("x % y = " + result);
+
+        System.out.println("Enter two numbers separated by the Enter key:");
+        double first = scanner.nextDouble();
+        double second = scanner.nextDouble();
+
+        System.out.println("first + second = " + (first + second));
 
         scanner.close();
-        System.out.println("Welcome " + forename + " " + surname);
-
     }
 }
