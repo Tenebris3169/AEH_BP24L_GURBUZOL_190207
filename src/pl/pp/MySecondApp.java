@@ -5,31 +5,21 @@ public class MySecondApp {
 
     public static void main(String[] args){
 
-        double x = 10;
-        double y = 2;
-
         Scanner scanner = new Scanner(System.in);
 
-        var result = x + y;
-        System.out.println("x + y = " + result);
+        // Step 1: Create an integer variable x and assign it a value of 10
+        int x = 10;
 
-        result = x - y;
-        System.out.println("x - y = " + result);
+        // Step 2: Calculate double of x
+        int doubleX = 2 * x;
 
-        result = x * y;
-        System.out.println("x * y = " + result);
+        // Step 3: Calculate x squared
+        int squaredX = x * x;
 
-        result = x / y;
-        System.out.println("x / y = " + result);
-
-        result = x % y;
-        System.out.println("x % y = " + result);
-
-        System.out.println("Enter two numbers separated by the Enter key:");
-        double first = scanner.nextDouble();
-        double second = scanner.nextDouble();
-
-        System.out.println("first + second = " + (first + second));
+        // Step 4: Display the results
+        System.out.println("The original value of x: " + x);
+        System.out.println("Double of x: " + doubleX);
+        System.out.println("x squared: " + squaredX);
 
         scanner.close();
     }
