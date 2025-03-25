@@ -7,19 +7,13 @@ public class MySecondApp {
 
         Scanner scanner = new Scanner(System.in);
 
-        // Step 1: Create an integer variable x and assign it a value of 10
-        int x = 10;
+        System.out.print("Enter your age in years: ");
+        int ageYears = scanner.nextInt();
 
-        // Step 2: Calculate double of x
-        int doubleX = 2 * x;
+        int secondsPerYear = 365 * 24 * 60 * 60; // Days in a year * hours * minutes * seconds
+        long ageInSeconds = (long) ageYears * secondsPerYear;
 
-        // Step 3: Calculate x squared
-        int squaredX = x * x;
-
-        // Step 4: Display the results
-        System.out.println("The original value of x: " + x);
-        System.out.println("Double of x: " + doubleX);
-        System.out.println("x squared: " + squaredX);
+        System.out.println("Your age in seconds is: " + ageInSeconds + " seconds.");
 
         scanner.close();
     }
