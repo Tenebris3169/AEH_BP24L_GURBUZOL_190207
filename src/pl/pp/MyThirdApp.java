@@ -7,21 +7,21 @@ public class MyThirdApp {
 
                 while (true) {
 
-                    System.out.print("Enter the number of days (enter a non-positive number to exit): ");
-                    int days = scanner.nextInt();
+                    System.out.print("Enter temperature in Celsius (-1 to exit): ");
+                    double celsius = scanner.nextDouble();
 
 
-                    if (days <= 0) {
+                    if (celsius == -1) {
                         System.out.println("Exiting program. Goodbye!");
                         break;
                     }
 
-                    // Convert days to weeks and remaining days
-                    int weeks = days / 7;
-                    int remainingDays = days % 7;
+                    // Convert to Fahrenheit and Kelvin
+                    double fahrenheit = 1.8 * celsius + 32.0;
+                    double kelvin = celsius + 273.16;
 
-                    // Display result
-                    System.out.println(days + " days is " + weeks + " weeks and " + remainingDays + " days.");
+                    // Display results with two decimal places
+                    System.out.printf("Celsius: %.2f°C, Fahrenheit: %.2f°F, Kelvin: %.2fK%n", celsius, fahrenheit, kelvin);
                 }
 
                 scanner.close();
