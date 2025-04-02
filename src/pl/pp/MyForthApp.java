@@ -3,34 +3,57 @@ import java.util.Scanner;
 public class MyForthApp {
 
             public static void main(String[] args) {
-                    Scanner scanner = new Scanner(System.in);
-                    boolean firstTime = true;
+                Scanner scanner = new Scanner(System.in);
 
-                    while (true) {
-                        if (firstTime) {
-                            System.out.print("Enter lower and upper integer limits: ");
-                            firstTime = false;
-                        } else {
-                            System.out.print("Enter next set of limits: ");
-                        }
+                while (true) {
+                    System.out.println("Select an operation: Add(+), Subtract(-), Multiply(*), Divide(/), or Exit(x)");
+                    String choice = scanner.next();
 
-                        int lower = scanner.nextInt();
-                        int upper = scanner.nextInt();
-
-                        if (upper <= lower) {
-                            System.out.println("Done");
-                            break;
-                        }
-
-                        int sumOfSquares = 0;
-                        for (int i = lower; i <= upper; i++) {
-                            sumOfSquares += i * i;
-                        }
-
-                        System.out.println("The sums of the squares from " + (lower * lower) + " to " + (upper * upper) + " is " + sumOfSquares + "\n");
+                    if (choice.equals("x")) {
+                        System.out.println("Goodbye!");
+                        break;
                     }
 
-                    scanner.close();
+                    System.out.print("Enter first number: ");
+                    while (!scanner.hasNextDouble()) {
+                        System.out.println("Invalid input. Please enter a number.");
+                        scanner.next();
+                    }
+                    double num1 = scanner.nextDouble();
+
+                    System.out.print("Enter second number: ");
+                    while (!scanner.hasNextDouble()) {
+                        System.out.println("Invalid input. Please enter a number.");
+                        scanner.next();
+                    }
+                    double num2 = scanner.nextDouble();
+
+                    double result = 0;
+                    switch (choice) {
+                        case "+":
+                            result = num1 + num2;
+                            break;
+                        case "-":
+                            result = num1 - num2;
+                            break;
+                        case "*":
+                            result = num1 * num2;
+                            break;
+                        case "/":
+                            if (num2 == 0) {
+                                System.out.println("Error: Cannot divide by zero.");
+                                continue;
+                            }
+                            result = num1 / num2;
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Please try again.");
+                            continue;
+                    }
+
+                    System.out.println("Result: " + result + "\n");
+                }
+                scanner.close();
             }
         }
 
